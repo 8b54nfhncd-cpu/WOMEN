@@ -88,7 +88,7 @@ def set_webhook():
         result = requests.post(f"{API_URL}/setWebhook", json={"url": webhook_url})
         logger.info(f"Webhook установлен: {webhook_url} - {result.json()}")
 
-if name == "__main__":
+if __name__ == "__main__":
     set_webhook()
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
